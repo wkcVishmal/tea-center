@@ -1,12 +1,14 @@
 <!doctype html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset = "utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-		<title>Thilanka Tea Collecting Center</title>
+		<title>My Site</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/style.css">
+		<!-- Custom CSS for full image slider-->
+        <link href="css/full-slider.css" rel="stylesheet">
 	</head>
 
 	<body>
@@ -126,47 +128,47 @@ echo $form;
 		</nav>
 <!-- End of the navigation bar -->
 
-<!-- Start of the Forms -->
-<!-- login form eke comtent eka
+<!-- Full Page Image Background Carousel Header -->
+    <header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
 
-
-
--->
-
-<!-- End of the Forms -->
-
-<!-- Header Carousel -->
-<div class="container">
-  <br>
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-      <li data-target="#myCarousel" data-slide-to="3"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img src="images/a.jpg" alt="Chania" class="img-responsive">
-      </div>
-
-      <div class="item">
-        <img src="images/b.jpg" alt="Chania" class="img-responsive">
-      </div>
-    
-      <div class="item">
-        <img src="images/c.jpg" alt="Flower" class="img-responsive">
-      </div>
-
-      <div class="item">
-        <img src="images/d.jpg" alt="Flower" class="img-responsive">
-      </div>
-    </div>
-
-    <!-- Left and right controls -->
+        <!-- Wrapper for Slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <!-- Set the first background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQiFJLUWLa2IfUti0flm7fl9uZK-p9rajLgJ86xxQPtQZhdBc-czMk1b_A');"></div>
+                <div class="carousel-caption">
+                    
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the second background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQwXq5iOzgWgK85XynP_VupcxVFrOrxF_dEjzhCiWtD-uQttqrL4g');"></div>
+                <div class="carousel-caption">
+                    
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the third background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRuKvUI9cExkTJS3LytYXBvUFTQGoMV_vCFa6TYjAA-_LdUpOoSugAbrA');"></div>
+                <div class="carousel-caption">
+                    
+                </div>
+            </div>
+        </div>
+    <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+    <!-- Left and right controls
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
@@ -174,7 +176,7 @@ echo $form;
     <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
-    </a>
+    </a>-->
   </div>
 </div>
 <!-- end of Header Carousel -->
@@ -186,7 +188,7 @@ echo $form;
 			<div class="col-md-5">
 				<h4>Contact Address</h4>
 				<address>
-					Thilanka Tea Collecting Center,<br> Warakapalahena,<br> Nakiyadeniya,<br> Galle.
+					Thilanka Tea Center,<br> Warakapalahena,<br> Nakiyadeniya,<br> Galle.
 					
 
 				</address>
@@ -195,7 +197,7 @@ echo $form;
 			
 		</div>
 		<div class="bottom-footer">
-			<div class="col-md-5">@ Copyright phpGroupProject 2015.</div>
+			<div class="col-md-5">@ Copyright WebDevMentors 2014.</div>
 			<div class="col-md-7">
 				<ul class="footer-nav">
 					<li><a href="#">Index</a></li>
@@ -214,5 +216,13 @@ echo $form;
 
 		<script type="text/javascript" src = "js/jquery.js"> </script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+		<!-- Script to Activate the Carousel -->
+	    <script>
+	    $('.carousel').carousel({
+	        interval: 5000 //changes the speed
+	    })
+	    </script>
+
 	</body>
 </html> 

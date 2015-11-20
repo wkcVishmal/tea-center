@@ -69,7 +69,7 @@ require('config.php');
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "mywebsite";
+$dbname = "t_center";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -83,6 +83,7 @@ if(isset($_POST['submit'])){
 	$password=$_POST['password'];
 	$confirmpassword=$_POST['confirmpassword'];
 	$privilage=$_POST['privilage'];
+	$nic=$_POST['nic'];
 
 	if($email==$confirmemail){
 		if($password==$confirmpassword){
@@ -90,10 +91,12 @@ if(isset($_POST['submit'])){
 			$firstname = mysql_real_escape_string($_POST['firstname']);
 			$lastname = mysql_real_escape_string($_POST['lastname']);
 			$username = mysql_real_escape_string($_POST['username']);
+			$nic = mysql_real_escape_string($nic);
 			$privilage = mysql_real_escape_string($privilage);
 			$contactnumber = mysql_real_escape_string($_POST['contactnumber']);
 			$email = mysql_real_escape_string($email);
 			$password = mysql_real_escape_string($password);
+			$contact_no=mysql_real_escape_string($_POST['contactnumber']);
 			
 			$password = md5($password);//this for the secure the password
 
@@ -113,7 +116,7 @@ if(isset($_POST['submit'])){
 	            
 	            
 	        }*/
-	        $sql = "INSERT INTO user (userid, firstname, lastname, username, privilage, contactnumber, email, password) VALUES (NULL, '$firstname', '$lastname', '$username', '$privilage', '$contactnumber', '$email', '$password')";
+	        $sql = "INSERT INTO user (id, f_name, l_name, username, nic, password, privilege, contact_no, email) VALUES (NULL, '$firstname', '$lastname', '$username', '$nic', '$password', '$privilage', '$contact_no', '$email')";
 
 				if ($conn->query($sql) === TRUE) {
 				    echo "New record created successfully<br><br>";
@@ -153,6 +156,7 @@ $form = <<<EOT
 					    <input type="text" id="nameF" name="firstname" class="form-control" placeholder="First name">
 					    <input type="text" id="nameF" name="lastname" class="form-control" placeholder="Last name">
 					    <input type="text" id="textF" name="username" class="form-control" placeholder="username"><br>
+					    <input type="text" id="textF" name="nic" class="form-control" placeholder="NIC"><br>
 
 
 					    <div class="styleSelect" class="dropdown">
@@ -165,8 +169,8 @@ $form = <<<EOT
 					   				
 
 					    <input type="text" id="textF" name="contactnumber" class="form-control" placeholder="Contact Number"><br>
-					    <input type="text" id="textF" name="email" class="form-control" placeholder="Emai address"><br>
-					    <input type="text" id="textF" name="confirmemail" class="form-control" placeholder="Re-Enter Email address"><br>
+					    <input type="email" id="textF" name="email" class="form-control" placeholder="Emai address"><br>
+					    <input type="email" id="textF" name="confirmemail" class="form-control" placeholder="Re-Enter Email address"><br>
 					    <input type="password" id="textF" name="password" class="form-control" placeholder="Password"><br>
 					    <input type="password" id="textF" name="confirmpassword" class="form-control" placeholder="Confirm Password">
 					    
